@@ -1,42 +1,55 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     private String name;
     private int score;
-
     private List<Card> hand;
 
     public Player() {
-        this.name = name;
         this.score = 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public List<Card> getHand() {
-        return hand;
+        this.hand = new ArrayList<>();
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public List<Card> getHand() {
+        return hand;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int incrementScore(int score) {
+        return this.score + 1;
     }
 
     public void setHand(List<Card> hand) {
         this.hand = hand;
     }
 
+    public Card flip (List<Card> hand){
+        return hand.getFirst();
+    }
+
+
     public void describe() {
-        System.out.println("Player: " + name + ", Score: " + score);
+        System.out.println("Player: " + name + "has the following cards: ");
+        List<Card> hand = getHand();
+        for(Card card : hand){
+            card.describe();
+        }
     }
 
 }

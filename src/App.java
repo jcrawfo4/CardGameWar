@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class App {
 
     // This Lab will give you a basic look at creating an Object Oriented Card Game.
@@ -63,8 +67,8 @@ public class App {
 
         Deck newDeck = new Deck();
         // Call the describe method on the newly instantiated deck.
-        System.out.println("\nNew Deck");
-        newDeck.describe();
+        //System.out.println("\nNew Deck");
+        //newDeck.describe();
 
 
 
@@ -74,13 +78,13 @@ public class App {
         //		Add a shuffle method within the Deck Class
         System.out.println("\nQuestion 3: Deck shuffle() method");
         // Test your method here
-        newDeck.shuffle();
+        //newDeck.shuffle();
 
 
 
         // Call the describe method on the newly shuffled deck.
         System.out.println("\nShuffled Deck");
-        newDeck.describe();
+        //newDeck.describe();
 
 
 
@@ -105,11 +109,11 @@ public class App {
         // 			and deal the cards out to the "players" in the Map.
 
         System.out.println("\nQuestion 5: Create Game");
-        // Call your method here
-        Game newGame = new Game();
+        Game newGame = new Game(3);
         // Call the describeGame method on the newly created game.
-        newGame.describeGame(newGame.createGame(7));
-
+        newGame.createGame(newDeck, newGame.listOfPlayers);
+        newGame.playOneDeal(newGame.listOfPlayers);
+        newGame.describeGame(newGame.createGame(newDeck, newGame.listOfPlayers));
     }
 
 
