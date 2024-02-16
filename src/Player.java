@@ -40,12 +40,12 @@ public class Player {
     }
 
     public Card flip (List<Card> hand){
-        return hand.getFirst();
+        return hand.removeFirst();
     }
 
 
     public void describe() {
-        System.out.println("Player: " + name + "has the following cards: ");
+        System.out.println(name + " has the following cards: \n");
         List<Card> hand = getHand();
         for(Card card : hand){
             card.describe();

@@ -111,9 +111,12 @@ public class App {
         System.out.println("\nQuestion 5: Create Game");
         Game newGame = new Game(3);
         // Call the describeGame method on the newly created game.
-        newGame.createGame(newDeck, newGame.listOfPlayers);
-        newGame.playOneDeal(newGame.listOfPlayers);
-        newGame.describeGame(newGame.createGame(newDeck, newGame.listOfPlayers));
+        newGame.dealCardsOut(newDeck);
+        for(Player p : newGame.listOfPlayers){
+            p.describe();
+        }
+        newGame.playRound();
+
     }
 
 

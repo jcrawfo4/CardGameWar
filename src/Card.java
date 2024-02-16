@@ -11,9 +11,8 @@ public class Card {
         this.value = value;
     }
 
-    public void describe() {
-        //System.out.println("Name: " + name + ", Suit: " + suit + ", Value: " + value);
-        System.out.println(name + " of " + suit + ",  Value: " + value);
+    public String describe() {
+        return name + " of " + suit + ",  Value: " + value;
     }
 
     public String getName() {
